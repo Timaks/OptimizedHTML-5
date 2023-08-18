@@ -4,13 +4,13 @@
 @fontsize: 16px; // Body Font Size
 @textcolor: #333; // Text Color
 @lineheight: 1.65; // Document Line Height
-@userfont: roboto-oh5, sans-serif; // User Font Family
+@userfont: Roboto, sans-serif; // User Font Family
 @systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
 
 // IMPORT SECTION
 
-@import (less) 'node_modules/bootstrap/dist/css/bootstrap-reboot.css'; // Bootstrap Reboot collection
-// @import (less) 'node_modules/bootstrap/dist/css/bootstrap-grid.css'; // Optional Bootstrap Grid
+@import '/node_modules/bootstrap/dist/css/bootstrap-reboot.min.css'; // Bootstrap Reboot collection
+// @import '/node_modules/bootstrap/dist/css/bootstrap-grid.min.css'; // Optional Bootstrap Grid
 
 // FONTS LOAD SECTION
 
@@ -19,16 +19,17 @@
 		font-family: @fname;
 		font-style: @fstyle;
 		font-weight: @fweight;
-		src: url(@furl) format('woff2');
+		src: local(@fname), url(@furl) format('woff2');
+		// font-display: swap; // Uncomment to initially display system fonts
 	}
 }
 
-.font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2');
-.font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2');
-.font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2');
-.font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
+.font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2');
+.font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2');
+.font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2');
+.font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
 
-// GENERAL CSS SETTINGS
+// GENERAL DOCUMENT STYLES
 
 ::placeholder {
 	color: #666;
